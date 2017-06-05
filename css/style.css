@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+#color-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+#color-grid > div {
+  text-align: center;
+  width: 150px;
+  margin: 15px;
+  overflow: hidden; 
+}
+
+.color-unit {
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.name {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.count {
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 60px;
+  padding: 0 20px;
+  background: white;
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.check-element {
+  border: 1px solid black;
+  opacity: 1;
+  padding: 10px;
+}
+
