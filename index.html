@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+<!--http://localhost/vote_fire/Color-Vote-gh-pages/-->
+  <head>
+    <meta charset="UTF-8">
+    <title>iVOTE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css'>
+	
+	<link href="css/progressbar.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/overwrite.css">
+	
+  </head>
+  <body>
+    
+<div ng-app="App" ng-controller="AppCtrl" class="container" id="mainContainer">
+  <h2><i class="fa fa-bullhorn"></i> iVOTE</h2>
+  <h4>{{ subTitle }}</h4>
+  
+  <!--<div>
+    <input type="text" placeholder="color" ng-model="name" />
+    <button ng-click="add()">add color</button>
+  </div>-->
+  <div>
+    <div id="color-grid" ng-hide="voted" >
+      <div ng-repeat="color in colors | orderBy: 'name' ">
+        <p  class="name">{{ color.party }} </p>
+		<img src="{{ color.photo }}" class="userImage">
+        <div class="color-unit">
+          <button ng-click="vote(color)" id="voteButton" class="count"><i class="fa fa-thumbs-up"></i>{{ color.name }}</button>
+        </div>
+      </div>
+    </div>
+	
+<!--<div class="spinner" ng-hide="showSpinner"></div>-->	  
+	
+	<div id="color-grid1" ng-hide="hideResults" >
+<div class="loader"></div>
+
+	<div>
+	  <p>{{ youVotedFor }}</p>
+	  </div>
+
+	  <!--<div ng-repeat="color in colors | orderBy: 'count' ">
+        <p  class="name">{{ color.name }} </p>
+		<div class="color-unit">
+          <button class="count"><i class="fa fa-thumbs-up"></i>{{ color.count }}</button>
+        </div>
+      </div>-->
+	  
+<div ng-repeat="data in scopebarChartData| orderBy: '-count'">
+		<p data-value="{{data.percentage}}">{{data.CandidateDetails}} {{data.count}} votes</p>
+		<progress max="100" value="{{data.percentage}}" class="html5">
+		<div class="progress-bar">
+		
+				<span style="width:{{data.percentage}}%">{{data.percentageinfo}}</span>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <script src='https://cdn.firebase.com/js/client/2.2.4/firebase.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
+  <script src='https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js'></script>
+  <script src="js/index.js"></script>
+ </body>
+</html>
