@@ -10,4 +10,5 @@ The fiddle attached is not up to date
 Credits:  
 https://codepen.io/collection/XqOWbw/  
 https://github.com/iheartkode/Color-Vote  
-https://codepen.io/pankajparashar/pen/qDKGo for the Bar graph  
+https://codepen.io/pankajparashar/pen/qDKGo for the Bar graph 
+madhusudhan.com  
